@@ -17,6 +17,9 @@ public:
     explicit addingmenu(QWidget *parent = nullptr);
     ~addingmenu();
 
+    // структура со всей введенной пользователем информацией
+    struct autoservice_info_dialog get_autservice_info_dialog();
+
 
 private slots:
     //void on_autoservice_name_field_inputRejected();
@@ -58,6 +61,17 @@ private slots:
 private:
     Ui::addingmenu *ui;
     std::vector<bool> types_of_work = std::vector<bool>(5, false);
+
+    // класс с содержательной информацией
+    struct autoservice_info_dialog{
+        QString autoservice_name;
+        QString street_name;
+        QString street_number;
+        QString building_number;
+        QString amount_of_working_posts;
+    };
+
+    autoservice_info_dialog data;
 
 
 

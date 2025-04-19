@@ -21,6 +21,8 @@ void MainWindow::on_add_autoservice_btn_clicked()
     // запускаем диалог в модальном режиме
     if (window.exec() == QDialog::Accepted) {
         // обработка данных после "Принять"
+        QString autoservice_name = window.get_autservice_info_dialog();
+
     }
 }
 

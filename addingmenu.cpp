@@ -23,7 +23,6 @@ addingmenu::~addingmenu()
 }
 
 
-
 // функция, срабатывающая при редактировании текста пользователем
 void addingmenu::on_autoservice_name_field_textEdited(const QString &arg1)
 {
@@ -336,9 +335,19 @@ void addingmenu::on_rouitine_maintenance_check_box_clicked()
         ui->apply_btn->setEnabled(false);
 }
 
-
+// реализация действий при нажатии кнопки "принять"
 void addingmenu::on_apply_btn_clicked()
 {
+    data.autoservice_name=ui->autoservice_name_field->text();
+    data.street_name=ui->street_name_field->text();
+    data.street_number=ui->street_number_field->text();
+    data.building_number=ui->street_number_field->text();
+    data.amount_of_working_posts=ui->number_of_work_spaces_field->text();
+
 
 }
 
+struct autoservice_info_dialog get_Name_street();
+{
+    return data;
+}
